@@ -29,6 +29,73 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',-apple-system,sans-serif;background:#00010a;color:var(--text);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased}
 
+/* ═══ INSTAGRAM GATE ═══ */
+#ig-gate{
+  position:fixed;inset:0;z-index:99999;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,1,10,.82);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  transition:opacity .55s cubic-bezier(0.16,1,0.3,1),visibility .55s;
+}
+#ig-gate.hidden{opacity:0;visibility:hidden;pointer-events:none}
+#ig-card{
+  background:rgba(8,8,22,.78);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:28px;
+  padding:52px 48px 44px;
+  width:100%;max-width:420px;
+  text-align:center;
+  box-shadow:0 0 0 1px rgba(255,255,255,.04),0 40px 100px rgba(0,0,0,.7),0 0 80px rgba(0,1,10,.5);
+  animation:igAppear .7s .1s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes igAppear{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+#ig-logo{margin-bottom:22px}
+#ig-title{font-size:1.7rem;font-weight:900;letter-spacing:-.04em;color:#fff;margin-bottom:10px}
+#ig-sub{color:rgba(240,240,248,.52);font-size:.88rem;line-height:1.6;margin-bottom:32px}
+#ig-input-wrap{
+  display:flex;align-items:center;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;
+  padding:0 18px;
+  margin-bottom:10px;
+  transition:border-color .25s,box-shadow .25s;
+}
+#ig-input-wrap:focus-within{
+  border-color:rgba(0,212,255,.45);
+  box-shadow:0 0 0 3px rgba(0,212,255,.08);
+}
+#ig-at{color:rgba(240,240,248,.38);font-size:1rem;font-weight:600;user-select:none;flex-shrink:0}
+#ig-input{
+  flex:1;background:none;border:none;outline:none;
+  padding:16px 10px;
+  color:#fff;font-size:1rem;font-family:inherit;font-weight:500;
+  cursor:none;
+}
+#ig-input::placeholder{color:rgba(240,240,248,.22)}
+#ig-error{
+  min-height:18px;
+  font-size:.78rem;color:#ff6b6b;
+  margin-bottom:6px;
+  opacity:0;transition:opacity .2s;
+}
+#ig-error.show{opacity:1}
+#ig-btn{
+  width:100%;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
+  color:#fff;font-size:.95rem;font-weight:700;
+  border:none;border-radius:14px;
+  padding:16px 28px;
+  cursor:none;
+  transition:.3s cubic-bezier(0.16,1,0.3,1);
+  box-shadow:0 0 30px rgba(0,212,255,.18);
+  margin-bottom:18px;
+}
+#ig-btn:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 0 40px rgba(0,212,255,.3)}
+#ig-btn:active{transform:translateY(0)}
+#ig-note{font-size:.72rem;color:rgba(240,240,248,.28);letter-spacing:.03em}
+
 /* CURSOR + TRAIL */
 #cd,#cr{position:fixed;pointer-events:none;z-index:10000;border-radius:50%;transform:translate(-50%,-50%)}
 #cd{width:7px;height:7px;background:#fff;transition:opacity .2s}
@@ -441,6 +508,32 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 </head>
 <body>
 
+<!-- ═══ INSTAGRAM GATE ═══ -->
+<div id="ig-gate">
+  <div id="ig-card">
+    <div id="ig-logo">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="url(#iggrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <defs><linearGradient id="iggrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1.2" fill="url(#iggrad)" stroke="none"/>
+      </svg>
+    </div>
+    <h2 id="ig-title">Accès exclusif</h2>
+    <p id="ig-sub">Entre ton Instagram pour accéder au site</p>
+    <div id="ig-input-wrap">
+      <span id="ig-at">@</span>
+      <input id="ig-input" type="text" placeholder="ton_instagram" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"/>
+    </div>
+    <div id="ig-error"></div>
+    <button id="ig-btn" onclick="igSubmit()">
+      <span id="ig-btn-text">Accéder au site</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+    <p id="ig-note">Réservé aux personnes sérieuses · 100% privé</p>
+  </div>
+</div>
+
 
 <div id="cd"></div><div id="cr"></div>
 
@@ -726,6 +819,53 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 </a>
 
 <script>
+
+/* ═══ INSTAGRAM GATE ═══ */
+(function(){
+  const gate=document.getElementById('ig-gate');
+  const input=document.getElementById('ig-input');
+  const err=document.getElementById('ig-error');
+
+  /* Si déjà passé, on cache immédiatement */
+  if(localStorage.getItem('ig_access')){
+    gate.style.display='none';
+    return;
+  }
+
+  /* Soumettre avec Entrée */
+  input.addEventListener('keydown',e=>{ if(e.key==='Enter') igSubmit(); });
+
+  window.igSubmit=function(){
+    const val=input.value.trim().replace(/^@/,'');
+    err.classList.remove('show');
+
+    if(!val){
+      err.textContent='Entre ton pseudo Instagram pour continuer.';
+      err.classList.add('show');
+      input.focus();
+      return;
+    }
+    if(!/^[\w.]{1,30}$/.test(val)){
+      err.textContent='Pseudo invalide — lettres, chiffres, _ et . uniquement.';
+      err.classList.add('show');
+      return;
+    }
+
+    /* Sauvegarde locale */
+    localStorage.setItem('ig_access', '@'+val);
+    localStorage.setItem('ig_date', new Date().toISOString());
+
+    /* Animation de sortie */
+    const btn=document.getElementById('ig-btn');
+    document.getElementById('ig-btn-text').textContent='Bienvenue 👋';
+    btn.style.background='linear-gradient(135deg,#00c853,#00e676)';
+
+    setTimeout(()=>{
+      gate.classList.add('hidden');
+      setTimeout(()=>gate.style.display='none',600);
+    },600);
+  };
+})();
 
 /* ═══ CURSOR + MAGNETIC + TRAIL ═══ */
 const cd=document.getElementById('cd'),cr=document.getElementById('cr');
