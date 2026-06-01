@@ -1739,16 +1739,7 @@ document.getElementById('legal-modal')?.addEventListener('click',e=>{
 document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeLegal(); });
 
 /* ═══ ANALYTICS & TRACKING (P10) ═══ */
-/* {{À_REMPLIR: décommenter et remplacer par votre ID Plausible ou GA4}} */
-/*
-// Plausible (recommandé — respectueux RGPD, sans cookie) :
-// <script defer data-domain="pierredigital.agency" src="https://plausible.io/js/script.js"></script>
-// Ajouter dans <head> et renseigner votre domaine sur plausible.io
-
-// Google Analytics 4 :
-// <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-// <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-*/
+/* {{À_REMPLIR: ajouter Plausible ou GA4 dans le <head>}} */
 
 function track(event, props){
   /* Plausible */
