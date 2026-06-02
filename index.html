@@ -497,6 +497,51 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 .flinks a:hover{color:#fff}
 
 /* WHATSAPP BUTTON */
+/* ─ FLOATING AUDIT ─ */
+#float-audit{
+  position:fixed;bottom:28px;left:28px;z-index:9997;
+  display:flex;align-items:center;gap:13px;
+  background:linear-gradient(135deg,#0a0a18,#0d1030);
+  border:1.5px solid rgba(0,212,255,.5);
+  border-radius:18px;
+  padding:14px 20px 14px 16px;
+  text-decoration:none;color:#fff;
+  box-shadow:0 0 0 1px rgba(0,212,255,.12),0 8px 40px rgba(0,0,0,.6),0 0 30px rgba(0,212,255,.15);
+  transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;
+  animation:floatIn .8s 1s var(--ease) both;
+  cursor:none;
+  max-width:260px;
+}
+@keyframes floatIn{from{opacity:0;transform:translateY(20px) scale(.95)}to{opacity:1;transform:none}}
+#float-audit:hover{
+  transform:translateY(-4px) scale(1.02);
+  border-color:rgba(0,212,255,.85);
+  box-shadow:0 0 0 1px rgba(0,212,255,.25),0 16px 50px rgba(0,0,0,.6),0 0 50px rgba(0,212,255,.25);
+}
+.fa-icon{
+  width:42px;height:42px;flex-shrink:0;border-radius:12px;
+  background:linear-gradient(135deg,rgba(0,212,255,.18),rgba(162,89,255,.12));
+  border:1px solid rgba(0,212,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+/* Pulse ring */
+.fa-icon::before{
+  content:'';position:absolute;inset:-4px;border-radius:16px;
+  border:1.5px solid rgba(0,212,255,.4);
+  animation:auditPulse 2.2s ease-in-out infinite;
+}
+@keyframes auditPulse{
+  0%,100%{transform:scale(1);opacity:.6}
+  50%{transform:scale(1.15);opacity:0}
+}
+.fa-texts{display:flex;flex-direction:column;gap:2px;min-width:0}
+.fa-title{font-size:.88rem;font-weight:800;letter-spacing:-.02em;color:#fff;white-space:nowrap}
+.fa-sub{font-size:.68rem;color:rgba(0,212,255,.75);font-weight:500;white-space:nowrap}
+.fa-arr{flex-shrink:0;color:rgba(0,212,255,.7);transition:transform .25s var(--ease)}
+#float-audit:hover .fa-arr{transform:translateX(4px)}
+
+/* ─ WA BTN ─ */
 #wa-btn{position:fixed;bottom:28px;right:28px;z-index:9998;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;font-size:.82rem;font-weight:700;text-decoration:none;padding:13px 20px 13px 16px;border-radius:100px;box-shadow:0 8px 32px rgba(37,211,102,.35);transition:transform .3s var(--ease),box-shadow .3s;cursor:none}
 #wa-btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 16px 48px rgba(37,211,102,.5)}
 #wa-btn svg{flex-shrink:0}
@@ -520,6 +565,8 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
   footer{flex-direction:column;text-align:center;padding:22px}
   body{cursor:auto}
   #cd,#cr{display:none}
+  #float-audit{bottom:88px;left:16px;right:16px;max-width:none;border-radius:16px}
+  #wa-btn{bottom:28px;right:16px}
   .ctas{flex-direction:column;align-items:center}
   .btn-mag{width:100%;max-width:280px;justify-content:center}
 }
@@ -1487,6 +1534,22 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
     </div>
   </div>
 </div>
+
+<a id="float-audit"
+   href="https://wa.me/33616206464?text=Bonjour%20Pierre%2C%20je%20voudrais%20demander%20mon%20audit%20gratuit%20!%20Peux-tu%20analyser%20mon%20site%20actuel%20%3F"
+   target="_blank" rel="noopener"
+   onclick="track('clic_audit_flottant')">
+  <div class="fa-icon">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+    </svg>
+  </div>
+  <div class="fa-texts">
+    <span class="fa-title">Audit gratuit 🎯</span>
+    <span class="fa-sub">Analyse de ton site · 100% offert</span>
+  </div>
+  <svg class="fa-arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</a>
 
 <a id="wa-btn" href="https://wa.me/33616206464?text=Bonjour%20Pierre%2C%20je%20souhaite%20cr%C3%A9er%20mon%20site%20web%20!" target="_blank" rel="noopener">
   <div class="wa-pulse"></div>
