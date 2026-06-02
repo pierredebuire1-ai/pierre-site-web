@@ -246,7 +246,36 @@ p,li,.hero-sub,.proc-sub,.wa-cta-desc,.wa-cta-note,.v-fact,.sct,
 .u-dot{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink);flex-shrink:0;animation:blink 1.4s infinite}
 
 /* Scroll indicator */
-.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:upFade 1s 1.8s forwards}
+/* AUDIT CTA */
+.audit-bar{
+  display:inline-flex;align-items:center;gap:16px;
+  margin-top:32px;padding:14px 22px 14px 18px;
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(0,212,255,.07),rgba(162,89,255,.07));
+  border:1px solid rgba(0,212,255,.28);
+  box-shadow:0 0 30px rgba(0,212,255,.08),inset 0 1px 0 rgba(255,255,255,.06);
+  opacity:0;animation:upFade 1s 1.8s var(--ease) forwards;
+  cursor:pointer;text-decoration:none;
+  transition:border-color .25s,box-shadow .25s,transform .25s var(--ease);
+}
+.audit-bar:hover{
+  border-color:rgba(0,212,255,.55);
+  box-shadow:0 0 50px rgba(0,212,255,.15),inset 0 1px 0 rgba(255,255,255,.08);
+  transform:translateY(-2px);
+}
+.audit-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(162,89,255,.1));
+  border:1px solid rgba(0,212,255,.25);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.audit-text{text-align:left}
+.audit-title{display:block;font-size:.92rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+.audit-sub{display:block;font-size:.72rem;color:rgba(0,212,255,.8);margin-top:2px;font-weight:500}
+.audit-arrow{color:rgba(0,212,255,.7);flex-shrink:0;transition:transform .25s var(--ease)}
+.audit-bar:hover .audit-arrow{transform:translateX(4px)}
+
+.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:upFade 1s 2.1s forwards}
 .scroll-ind span{font-size:.64rem;color:var(--dim);letter-spacing:.22em;text-transform:uppercase}
 .sline{width:1px;height:46px;background:linear-gradient(to bottom,var(--cyan),transparent);animation:spulse 2.2s infinite}
 @keyframes spulse{0%{opacity:0;transform:scaleY(0);transform-origin:top}55%{opacity:1;transform:scaleY(1);transform-origin:top}100%{opacity:0;transform:scaleY(1);transform-origin:bottom}}
@@ -905,6 +934,19 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
       <span class="u-dot"></span>
       <span>Il ne reste que <strong>2 places disponibles</strong> ce mois-ci</span>
     </div>
+
+    <a href="https://wa.me/33616206464?text=Bonjour%20Pierre%2C%20je%20voudrais%20demander%20mon%20audit%20gratuit%20!" target="_blank" rel="noopener" class="audit-bar" onclick="track('clic_audit')">
+      <div class="audit-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </div>
+      <div class="audit-text">
+        <span class="audit-title">Demande ton audit gratuit</span>
+        <span class="audit-sub">Analyse de ton site actuel · Réponse sous 24h · 100% offert</span>
+      </div>
+      <svg class="audit-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
   <div class="scroll-ind"><span>Scroll</span><div class="sline"></div></div>
 </section>
