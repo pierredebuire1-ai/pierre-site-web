@@ -856,6 +856,14 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 .email-cap-note{font-size:.72rem;color:var(--dim);margin-top:14px}
 
 /* ═══ LÉGAL MODAL ═══ */
+/* ── Lightbox vidéo témoignage ── */
+#temo-lightbox{position:fixed;inset:0;z-index:10000;background:rgba(0,1,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:none;align-items:center;justify-content:center;padding:20px;cursor:pointer}
+#temo-lightbox.open{display:flex;animation:lbIn .3s ease}
+@keyframes lbIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+#temo-lightbox-inner{position:relative;width:min(380px,90vw);cursor:default}
+#temo-lightbox-inner iframe{width:100%;aspect-ratio:9/16;border:none;border-radius:16px;display:block;box-shadow:0 0 80px rgba(0,212,255,.15)}
+#temo-lb-close{position:absolute;top:-44px;right:0;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;line-height:1;transition:background .2s,transform .2s}
+#temo-lb-close:hover{background:rgba(255,255,255,.2);transform:scale(1.1)}
 #legal-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,1,10,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;padding:24px}
 #legal-modal.open{display:flex}
 .legal-box{background:#08081a;border:1px solid var(--border);border-radius:24px;max-width:720px;width:100%;max-height:85vh;overflow:hidden;display:flex;flex-direction:column}
@@ -944,7 +952,7 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 </div>
 
 <nav id="nav">
-  <a href="#" class="logo"><span class="logo-name">Pierre Debuire<em>.</em></span><span class="logo-sub">Création Web Premium</span></a>
+  <a href="#" class="logo"><span class="logo-name">Pierre Debuire<em>.</em></span><span class="logo-sub">Présence Digitale · Conversion</span></a>
   <div class="nav-r">
     <a href="#portfolio">Réalisations</a>
     <a href="#offres">Offres</a>
@@ -961,15 +969,14 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 <section id="hero">
   <div class="noise-ov"></div>
   <div class="hero-c">
-    <div class="badge"><div class="bdot"></div>L'eau façonne la roche · Le code façonne votre avenir</div>
+    <div class="badge"><div class="bdot"></div>Pas juste un site — une présence qui travaille pour toi 24h/24</div>
     <h1 class="hero-t" id="heroTitle">
-      <div class="word-wrap"><span class="word thin">Je crée</span></div>&nbsp;
-      <div class="word-wrap"><span class="word">votre site</span></div>
+      <div class="word-wrap"><span class="word thin">Ta présence</span></div>
       <div class="word-br"></div>
-      <div class="word-wrap"><span class="word thin">en</span></div>&nbsp;
-      <div class="word-wrap"><span class="word c">48 heures.</span></div>
+      <div class="word-wrap"><span class="word thin">qui</span></div>&nbsp;
+      <div class="word-wrap"><span class="word c">convertit.</span></div>
     </h1>
-    <p class="hero-sub">Comme l'eau, votre site s'adapte, s'infiltre partout et convertit sans résistance — livré en 48h chrono.</p>
+    <p class="hero-sub">Je ne crée pas des sites web. Je construis des présences digitales qui capturent l'attention, inspirent confiance et transforment des visiteurs en clients — en 48h chrono.</p>
     <div class="ctas">
       <a href="#contact" class="btn-mag btn-w">Démarrer mon projet</a>
       <a href="#video-sec" class="btn-mag btn-o">
@@ -1001,8 +1008,8 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 <!-- TICKER -->
 <div class="ticker">
   <div class="t-track">
-    <span class="t-item">Création Web · 48h</span><span class="t-item">Fluide comme l'eau</span><span class="t-item">Design Premium</span><span class="t-item">Conversion ×3</span><span class="t-item">Code sur-mesure</span><span class="t-item">Toujours en ligne</span><span class="t-item">Pierre Debuire · @pierredbr_</span><span class="t-item">Sites qui coulent de source</span>
-    <span class="t-item">Création Web · 48h</span><span class="t-item">Fluide comme l'eau</span><span class="t-item">Design Premium</span><span class="t-item">Conversion ×3</span><span class="t-item">Code sur-mesure</span><span class="t-item">Toujours en ligne</span><span class="t-item">Pierre Debuire · @pierredbr_</span><span class="t-item">Sites qui coulent de source</span>
+    <span class="t-item">Présence Digitale · 48h</span><span class="t-item">Visiteurs → Clients</span><span class="t-item">Design Premium</span><span class="t-item">Conversion · Résultats</span><span class="t-item">Sur-mesure · Unique</span><span class="t-item">Actif 24h/24</span><span class="t-item">Pierre Debuire · @pierredbr_</span><span class="t-item">Ta présence qui travaille pour toi</span>
+    <span class="t-item">Présence Digitale · 48h</span><span class="t-item">Visiteurs → Clients</span><span class="t-item">Design Premium</span><span class="t-item">Conversion · Résultats</span><span class="t-item">Sur-mesure · Unique</span><span class="t-item">Actif 24h/24</span><span class="t-item">Pierre Debuire · @pierredbr_</span><span class="t-item">Ta présence qui travaille pour toi</span>
   </div>
 </div>
 
@@ -1011,8 +1018,8 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
   <div class="port-inner">
     <div class="r" style="text-align:center">
       <div class="v-label">Réalisations</div>
-      <h2 style="font-size:clamp(2rem,5vw,3.8rem);font-weight:900;letter-spacing:-.05em;margin-bottom:14px">Sites livrés,<br>clients <span class="gc">satisfaits.</span></h2>
-      <p style="color:var(--muted);max-width:480px;margin:0 auto;line-height:1.7;font-size:.95rem">Chaque projet est unique. Voici un aperçu de ce que je crée.</p>
+      <h2 style="font-size:clamp(2rem,5vw,3.8rem);font-weight:900;letter-spacing:-.05em;margin-bottom:14px">Présences créées,<br>clients <span class="gc">conquis.</span></h2>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto;line-height:1.7;font-size:.95rem">Chaque présence est unique. Voici ce que vivent les visiteurs de mes clients.</p>
     </div>
 
     <div class="port-grid">
@@ -1081,7 +1088,7 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 <section id="video-sec">
   <div class="v-label r">La Vidéo</div>
   <h2 class="v-title r" style="transition-delay:.08s">Regardez<br><span style="color:var(--cyan)">pour comprendre les services.</span></h2>
-  <p class="v-sub r" style="transition-delay:.15s">Un site fluide, puissant, silencieux — qui convertit pendant que vous vivez.</p>
+  <p class="v-sub r" style="transition-delay:.15s">Une présence digitale puissante et silencieuse — qui convertit pendant que vous vivez.</p>
   <div class="vid-wrap r" style="transition-delay:.22s">
     <div class="vid-frame">
       <div class="vid-inner">
@@ -1114,9 +1121,9 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 
   <div class="ver-header r">
-    <div class="ver-eyebrow">💧 Pierre Debuire · Vérités Digitales</div>
+    <div class="ver-eyebrow">⚡ Pierre Debuire · Vérités Digitales</div>
     <h2 class="ver-title">Ce que personne<br>n'ose <em>vraiment</em> dire.</h2>
-    <p class="ver-sig">— Création Web Premium · @pierredbr_</p>
+    <p class="ver-sig">— Présence Digitale · @pierredbr_</p>
   </div>
 
   <div class="bubbles-flow">
@@ -1131,8 +1138,8 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
         <div class="qb-b" style="width:6px;height:6px;bottom:20%;left:8%;animation-duration:5s;animation-delay:-1s"></div>
       </div>
       <div class="qb-num">01 <span>Vérité digitale</span></div>
-      <p class="qb-text">L'eau ne force pas.<br>Elle <em>trouve toujours</em> son chemin.</p>
-      <p class="qb-foot">Un bon site web, c'est pareil — il s'infiltre naturellement dans l'esprit de ton client et convertit sans friction.</p>
+      <p class="qb-text">Ton site, c'est ton<br><em>commercial le plus fiable.</em></p>
+      <p class="qb-foot">Il ne dort jamais, ne rate jamais un prospect, ne négocie pas mal. Une présence bien construite convertit 24h/24 — sans toi.</p>
     </div>
 
     <!-- Bubble 2 -->
@@ -1145,8 +1152,8 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
         <div class="qb-b" style="width:5px;height:5px;top:50%;left:18%;animation-duration:4s;animation-delay:-3s"></div>
       </div>
       <div class="qb-num">02 <span>Vérité digitale</span></div>
-      <p class="qb-text">Ton image en ligne,<br>c'est ta <em>surface.</em></p>
-      <p class="qb-foot">Comme l'eau reflète ce qu'il y a au-dessus, ton site reflète exactement ce que valent tes services aux yeux du client.</p>
+      <p class="qb-text">Ta présence en ligne,<br>c'est ta <em>première impression.</em></p>
+      <p class="qb-foot">Avant même de te parler, ton prospect a déjà jugé. Une présence premium dit "je vaux le prix" — une présence médiocre dit le contraire.</p>
     </div>
 
     <!-- Bubble 3 -->
@@ -1159,8 +1166,8 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
         <div class="qb-b" style="width:10px;height:10px;top:55%;right:15%;animation-duration:8s;animation-delay:-1s"></div>
       </div>
       <div class="qb-num">03 <span>Vérité digitale</span></div>
-      <p class="qb-text">L'eau ne s'arrête <em>jamais.</em><br>Ton site non <em>plus.</em></p>
-      <p class="qb-foot">Pendant que tu dors, voyages, vis — ton site coule, filtre, qualifie et convertit en silence, sans pause.</p>
+      <p class="qb-text">La plupart des sites<br><em>existent.</em> Le tien doit <em>convertir.</em></p>
+      <p class="qb-foot">Avoir un site, c'est le minimum. Avoir une présence qui capte, convainc et convertit — c'est ce qui fait la différence entre survivre et croître.</p>
     </div>
 
   </div>
@@ -1177,11 +1184,11 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
       <h2 class="s-title">Ce que<br>je façonne.</h2>
     </div>
     <div class="srv-cards">
-      <div class="sc r" style="transition-delay:.04s" data-tilt><div class="sc-num">01</div><div class="sc-name">Site Vitrine Premium</div><div class="sc-desc">Fluide, immersif, inoubliable. Un premier regard qui transforme un inconnu en client convaincu.</div></div>
-      <div class="sc r" style="transition-delay:.1s" data-tilt><div class="sc-num">02</div><div class="sc-name">Refonte & Revitalisation</div><div class="sc-desc">Votre ancien site régénéré comme une source — design liquide, rapide, qui coule vers la conversion.</div></div>
-      <div class="sc r" style="transition-delay:.16s" data-tilt><div class="sc-num">03</div><div class="sc-name">Branding Digital</div><div class="sc-desc">Une identité qui s'impose avec la force tranquille de l'eau — et justifie vos meilleurs tarifs.</div></div>
-      <div class="sc r" style="transition-delay:.22s" data-tilt><div class="sc-num">04</div><div class="sc-name">Optimisation Conversion</div><div class="sc-desc">Chaque élément guide le visiteur comme un courant — vers l'action, naturellement, sans résistance.</div></div>
-      <div class="sc r" style="transition-delay:.28s" data-tilt><div class="sc-num">05</div><div class="sc-name">Présence Premium</div><div class="sc-desc">L'image digitale qui filtre vos prospects — attire les bons, repousse le reste, en silence.</div></div>
+      <div class="sc r" style="transition-delay:.04s" data-tilt><div class="sc-num">01</div><div class="sc-name">Présence Vitrine</div><div class="sc-desc">Immersive, mémorable, convaincante. Un premier contact digital qui transforme un inconnu en prospect qualifié.</div></div>
+      <div class="sc r" style="transition-delay:.1s" data-tilt><div class="sc-num">02</div><div class="sc-name">Refonte & Repositionnement</div><div class="sc-desc">Votre ancienne présence transformée — design premium, message affûté, optimisée pour convertir dès la première visite.</div></div>
+      <div class="sc r" style="transition-delay:.16s" data-tilt><div class="sc-num">03</div><div class="sc-name">Identité de Marque</div><div class="sc-desc">Une identité visuelle cohérente qui inspire confiance instantanément — et justifie vos meilleurs tarifs.</div></div>
+      <div class="sc r" style="transition-delay:.22s" data-tilt><div class="sc-num">04</div><div class="sc-name">Optimisation Conversion</div><div class="sc-desc">Chaque élément de votre présence guidé vers l'action — structure, copywriting, UX — pour maximiser chaque visiteur.</div></div>
+      <div class="sc r" style="transition-delay:.28s" data-tilt><div class="sc-num">05</div><div class="sc-name">Présence Premium</div><div class="sc-desc">L'expérience digitale complète qui filtre vos prospects — attire les bons clients, repousse le reste, en silence.</div></div>
     </div>
   </div>
 </section>
@@ -1194,72 +1201,71 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
   <div class="offres-inner">
     <div class="r" style="text-align:center">
       <div class="v-label">Offres</div>
-      <h2 style="font-size:clamp(2rem,5vw,3.8rem);font-weight:900;letter-spacing:-.05em;margin-bottom:14px">Choisissez votre<br><span class="gc">formule.</span></h2>
-      <p style="color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7;font-size:.95rem">Trois niveaux clairs. Zéro surprise. Propriété totale du code livré.</p>
+      <h2 style="font-size:clamp(2rem,5vw,3.8rem);font-weight:900;letter-spacing:-.05em;margin-bottom:14px">Choisissez votre<br><span class="gc">niveau de présence.</span></h2>
+      <p style="color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7;font-size:.95rem">Trois niveaux d'impact. Zéro surprise. Propriété totale livrée.</p>
     </div>
     <div class="offres-grid r" style="transition-delay:.1s">
 
-      <!-- Offre 1 — Landing -->
+      <!-- Offre 1 — Audit Gratuit -->
       <div class="offre-card">
-        <div class="offre-name">Landing Page 48h</div>
-        <p class="offre-tagline">Une page de vente percutante, livrée en deux jours, prête à convertir.</p>
+        <div class="offre-name">Audit &amp; Stratégie</div>
+        <p class="offre-tagline">Tu as une idée, un projet, un business à lancer ? On analyse tout ensemble et on construit ta stratégie digitale — gratuitement.</p>
+        <div class="offre-price">
+          <div class="offre-amount" style="font-size:clamp(2.2rem,5vw,3rem);letter-spacing:-.04em">Gratuit</div>
+          <span class="offre-delay">Sans engagement · Réponse sous 24h</span>
+        </div>
+        <ul class="offre-features">
+          <li>Appel découverte 30 min offert</li>
+          <li>Analyse de ton idée / marché</li>
+          <li>Recommandation d'outils IA adaptés</li>
+          <li>Stratégie de présence digitale sur-mesure</li>
+          <li>Roadmap claire pour lancer ton projet</li>
+          <li>Pour SaaS, événements, business, créateurs…</li>
+        </ul>
+        <a href="https://wa.me/33616206464?text=Bonjour%20Pierre%2C%20je%20voudrais%20r%C3%A9server%20mon%20audit%20strat%C3%A9gique%20gratuit%20!" target="_blank" rel="noopener" class="offre-cta offre-cta-sec" onclick="track('clic_offre_audit')">Réserver mon audit →</a>
+      </div>
+
+      <!-- Offre 2 — Présence Business (phare) -->
+      <div class="offre-card phare">
+        <div class="offre-badge">⭐ La plus demandée</div>
+        <div class="offre-name">Présence Business</div>
+        <p class="offre-tagline">Ton premier pied dans le digital — une présence qui capte, convainc et convertit, livrée en 48h chrono.</p>
         <div class="offre-price">
           <span class="offre-from">À partir de</span>
-          <div class="offre-amount">250 <span>€</span></div>
+          <div class="offre-amount">200 <span>€</span></div>
           <span class="offre-delay">⚡ Livraison en 48h</span>
         </div>
         <ul class="offre-features">
-          <li>Design premium sur-mesure</li>
-          <li>1 page responsive (mobile + desktop)</li>
-          <li>Formulaire de contact ou CTA WhatsApp</li>
-          <li>Optimisation SEO de base</li>
-          <li>Mise en ligne incluse</li>
+          <li>Landing page ou site 1–3 pages sur-mesure</li>
+          <li>Design premium responsive (mobile + desktop)</li>
+          <li>Intégration IA (chatbot, formulaire intelligent…)</li>
+          <li>Page waitlist / pré-lancement SaaS</li>
+          <li>CTA optimisé pour convertir</li>
+          <li>SEO de base + mise en ligne incluse</li>
           <li>1 révision incluse</li>
         </ul>
-        <a href="#contact" class="offre-cta offre-cta-sec" onclick="track('clic_offre_landing')">Démarrer →</a>
+        <a href="#contact" class="offre-cta offre-cta-main btn-mag" onclick="track('clic_offre_presence')">Démarrer mon projet →</a>
       </div>
 
-      <!-- Offre 2 — Site Vitrine (phare) -->
-      <div class="offre-card phare">
-        <div class="offre-badge">⭐ Offre phare</div>
-        <div class="offre-name">Site Vitrine Premium</div>
-        <p class="offre-tagline">Votre vitrine digitale complète — design, code, mise en ligne, domaine configuré.</p>
-        <div class="offre-price">
-          <span class="offre-from">À partir de</span>
-          <div class="offre-amount">450 <span>€</span></div>
-          <span class="offre-delay">⚡ Livraison en 48h</span>
-        </div>
-        <ul class="offre-features">
-          <li>Design premium immersif sur-mesure</li>
-          <li>Jusqu'à 5 sections / pages</li>
-          <li>Animations fluides & responsive</li>
-          <li>Formulaire de contact fonctionnel</li>
-          <li>SEO technique + balises optimisées</li>
-          <li>Hébergement Vercel (1 an offert)</li>
-          <li>Formation à la gestion du contenu</li>
-          <li>2 révisions incluses</li>
-        </ul>
-        <a href="#contact" class="offre-cta offre-cta-main btn-mag" onclick="track('clic_offre_vitrine')">Démarrer mon projet →</a>
-      </div>
-
-      <!-- Offre 3 — Branding + Site -->
+      <!-- Offre 3 — Écosystème Digital -->
       <div class="offre-card">
-        <div class="offre-name">Site + Branding</div>
-        <p class="offre-tagline">Identité visuelle complète + site web — pour partir de zéro ou se réinventer.</p>
+        <div class="offre-name">Écosystème Digital</div>
+        <p class="offre-tagline">Pas juste une présence — un écosystème complet boosté à l'IA, conçu pour évoluer avec ton business.</p>
         <div class="offre-price">
           <span class="offre-from">À partir de</span>
-          <div class="offre-amount">1 000 <span>€+</span></div>
-          <span class="offre-delay">Délai sur devis</span>
+          <div class="offre-amount">500 <span>€</span></div>
+          <span class="offre-delay">Délai défini ensemble</span>
         </div>
         <ul class="offre-features">
-          <li>Tout ce qui est inclus dans Site Vitrine</li>
-          <li>Création du logo & charte graphique</li>
-          <li>Palette couleurs + typographies</li>
-          <li>Kit de marque livré (PDF + fichiers)</li>
+          <li>Site multi-pages immersif (jusqu'à 7 sections)</li>
+          <li>Identité visuelle complète (logo, charte, couleurs)</li>
+          <li>Intégrations IA avancées + automatisations</li>
+          <li>Page de lancement SaaS / espace membre</li>
+          <li>SEO technique complet</li>
           <li>Cohérence totale site ↔ réseaux sociaux</li>
-          <li>3 révisions incluses</li>
+          <li>3 révisions + support 30 jours</li>
         </ul>
-        <a href="#contact" class="offre-cta offre-cta-sec" onclick="track('clic_offre_branding')">Me contacter →</a>
+        <a href="https://wa.me/33616206464?text=Bonjour%20Pierre%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l%27offre%20%C3%89cosyst%C3%A8me%20Digital%20!" target="_blank" rel="noopener" class="offre-cta offre-cta-sec" onclick="track('clic_offre_ecosysteme')">En parler →</a>
       </div>
 
     </div>
@@ -1276,7 +1282,7 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
   <div class="proc-inner">
     <div class="r proc-label"><div class="v-label" style="justify-content:center">Processus</div></div>
     <h2 class="r proc-title">Comment ça <span class="gc">marche ?</span></h2>
-    <p class="r proc-sub">De l'idée au site live en 48 heures chrono.</p>
+    <p class="r proc-sub">De l'idée à une présence qui convertit — en 48 heures chrono.</p>
 
     <div class="proc-steps">
       <div class="proc-line"><div class="proc-line-fill" id="procLineFill"></div></div>
@@ -1350,10 +1356,10 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
     </div>
     <div class="pierre-text r" style="transition-delay:.12s">
       <div class="v-label" style="justify-content:flex-start">Qui suis-je ?</div>
-      <h2>Pierre Debuire,<br><span class="gc">créateur web.</span></h2>
-      <p>19 ans, passionné par l'IA et le business depuis toujours. Je développe des sites web qui ne ressemblent pas à des templates — ils ressemblent à leurs propriétaires. C'est ça qui fait qu'ils marchent vraiment.</p>
-      <p>Ma conviction : un bon site web, c'est une extension de toi. Il doit parler à ta place, convaincre à ta place — et convertir pendant que tu dors.</p>
-      <p>Je suis rapide, à l'écoute, et je livre en 48h. Pas de blabla, pas de délais interminables — juste du résultat.</p>
+      <h2>Pierre Debuire,<br><span class="gc">architecte de présence.</span></h2>
+      <p>19 ans, passionné par l'IA et le business depuis toujours. Je ne crée pas des sites — je construis des présences digitales qui ressemblent à leurs propriétaires. C'est ça qui fait qu'elles convertissent vraiment.</p>
+      <p>Ma conviction : chaque présence en ligne doit travailler pour toi. Parler à ta place, convaincre à ta place — et ramener des clients pendant que tu dors.</p>
+      <p>Je suis rapide, à l'écoute, et je livre en 48h. Pas de blabla, pas de délais interminables — juste une présence qui performe.</p>
       <div class="pierre-values">
         <span class="pierre-val">Livraison 48h</span>
         <span class="pierre-val">Réponse rapide</span>
@@ -1417,10 +1423,10 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 
       <li class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          Combien coûte un site web ?
+          Combien coûte une présence qui convertit ?
           <div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Landing Page à partir de 250€, Site Vitrine à partir de 450€, Site + Branding à partir de 1 000€. Chaque projet est unique — si le tien sort du cadre, on en discute sans engagement.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">L'Audit &amp; Stratégie est 100% gratuit — c'est le point de départ idéal si tu ne sais pas encore par où commencer. La Présence Business démarre à 200€ pour une landing page ou un site 1–3 pages livré en 48h. L'Écosystème Digital (site complet + identité + IA) part de 500€, délai défini ensemble. Chaque projet est unique — on en parle sans engagement.</div></div>
       </li>
 
       <li class="faq-item">
@@ -1428,7 +1434,7 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
           Est-ce vraiment livré en 48 heures ?
           <div class="faq-icon" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg></div>
         </button>
-        <div class="faq-a" role="region"><div class="faq-a-inner">Oui, pour les formules Landing Page et Site Vitrine. Le chrono démarre dès que vous m'avez transmis vos contenus (textes, photos, logos). Des révisions sont incluses après livraison. Pour les projets plus complexes (Branding + Site), le délai est défini ensemble selon le périmètre.</div></div>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Oui, pour la Présence Business. Le chrono démarre dès que tu m'as transmis tes contenus (textes, photos, logos). Des révisions sont incluses après livraison. Pour l'Écosystème Digital (projets SaaS, identité complète…), le délai est défini ensemble selon le périmètre.</div></div>
       </li>
 
       <li class="faq-item">
@@ -1523,6 +1529,14 @@ footer{padding:26px 52px;border-top:1px solid var(--border);display:flex;align-i
 </footer>
 
 <!-- ═══ LÉGAL MODAL ═══ -->
+<!-- Lightbox témoignage vidéo -->
+<div id="temo-lightbox" onclick="closeTemoLightbox(event)" role="dialog" aria-modal="true" aria-label="Témoignage vidéo">
+  <div id="temo-lightbox-inner">
+    <button id="temo-lb-close" onclick="closeTemoLightbox()" aria-label="Fermer">✕</button>
+    <div id="temo-lb-iframe-wrap"></div>
+  </div>
+</div>
+
 <div id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
   <div class="legal-box">
     <div class="legal-header">
@@ -2163,19 +2177,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
   if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
 }));
 
-/* ═══ YOUTUBE LAZY ═══ */
+/* ═══ YOUTUBE LAZY + LIGHTBOX ═══ */
 function loadTemoVid(){
-  const w=document.getElementById('temoVidWrap');
-  if(!w)return;
-  const iframe=document.createElement('iframe');
-  iframe.src='https://www.youtube.com/embed/KajcdT785sY?autoplay=1&rel=0';
-  iframe.title='Témoignage client — Pierre Debuire';
-  iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen=true;
-  iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none';
-  w.replaceWith(iframe);
+  const lb=document.getElementById('temo-lightbox');
+  const wrap=document.getElementById('temo-lb-iframe-wrap');
+  if(!lb||!wrap)return;
+  // Inject iframe seulement si pas déjà chargé
+  if(!wrap.querySelector('iframe')){
+    const iframe=document.createElement('iframe');
+    iframe.src='https://www.youtube.com/embed/KajcdT785sY?autoplay=1&rel=0&playsinline=1';
+    iframe.title='Témoignage client — Pierre Debuire';
+    iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    iframe.allowFullscreen=true;
+    iframe.style.cssText='width:100%;aspect-ratio:9/16;border:none;border-radius:16px;display:block';
+    wrap.appendChild(iframe);
+  }
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
   track('play_temoignage');
 }
+function closeTemoLightbox(e){
+  if(e&&document.getElementById('temo-lightbox-inner').contains(e.target)&&e.target.id!=='temo-lb-close')return;
+  const lb=document.getElementById('temo-lightbox');
+  lb.classList.remove('open');
+  document.body.style.overflow='';
+  // Stop video
+  const wrap=document.getElementById('temo-lb-iframe-wrap');
+  if(wrap)wrap.innerHTML='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTemoLightbox();});
 function loadYT(){
   const f=document.getElementById('ytFacade');
   if(!f)return;
@@ -2724,10 +2754,13 @@ const WP=[
 ];
 function lerp(a,b,t){return a+(b-a)*t}
 function wpLerp(prog){
+  if(!WP||!WP.length) return[0,0,12,0];
   const n=WP.length-1;
-  const fi=prog*n, i=Math.min(Math.floor(fi),n-1), f=fi-i;
+  const fi=Math.max(0,Math.min(prog*n,n));
+  const i=Math.min(Math.floor(fi),n-1);
+  const f=fi-i;
   const ease=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
-  const A=WP[i],B=WP[i+1]||WP[n];
+  const A=WP[i]||WP[0], B=WP[i+1]||WP[n]||WP[0];
   return[lerp(A[0],B[0],ease),lerp(A[1],B[1],ease),lerp(A[2],B[2],ease),lerp(A[3],B[3],ease)];
 }
 let camTX=0,camTY=0,camTZ=12,camLZ=0;
