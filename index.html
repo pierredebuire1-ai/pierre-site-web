@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pierre Debuire — Campagnes publicitaires IA & visibilité sur les réseaux</title>
+<title>Pierre Debuire — Campagnes publicitaires IA</title>
 <meta name="description" content="Créateur digital spécialisé en campagnes publicitaires IA. Vidéos, visuels et campagnes pour développer ta visibilité sur Instagram, TikTok, Facebook et en ligne.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://pierredigital.agency/">
@@ -13,12 +13,22 @@
 <meta property="og:title" content="Pierre Debuire — Campagnes publicitaires IA">
 <meta property="og:description" content="Des campagnes pub et du contenu créés avec l'IA pour devenir impossible à ignorer sur les réseaux.">
 <meta property="og:image" content="https://pierredigital.agency/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pierre Debuire — Deviens impossible à ignorer sur les réseaux">
+<meta property="og:site_name" content="Pierre Debuire">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@pierredbr_">
 <meta name="twitter:title" content="Pierre Debuire — Campagnes publicitaires IA">
 <meta name="twitter:description" content="Des campagnes pub et du contenu créés avec l'IA pour devenir impossible à ignorer sur les réseaux.">
 <meta name="twitter:image" content="https://pierredigital.agency/og-image.jpg">
+<meta name="twitter:image:alt" content="Pierre Debuire — Deviens impossible à ignorer sur les réseaux">
+<meta name="theme-color" content="#05060f">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <script type="application/ld+json">
 {
@@ -48,16 +58,21 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-900.woff2" as="font" type="font/woff2" crossorigin>
+<script src="/consent.js" defer></script>
 <style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500 600;font-display:swap;src:url(/fonts/inter-600.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/inter-700.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:800;font-display:swap;src:url(/fonts/inter-800.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:900;font-display:swap;src:url(/fonts/inter-900.woff2) format('woff2')}
 :root{
   --bg:#05060f;
   --card:rgba(255,255,255,.035);
   --text:#f2f3fa;
   --muted:rgba(242,243,250,.72);
-  --dim:rgba(242,243,250,.5);
+  --dim:rgba(242,243,250,.6);
   --border:rgba(255,255,255,.08);
   --cyan:#00d4ff;
   --purple:#a259ff;
@@ -154,6 +169,7 @@ nav.scrolled{background:rgba(5,6,15,.82);backdrop-filter:blur(14px);-webkit-back
 
 /* About */
 .about{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:64px;align-items:center}
+.about picture{display:block}
 .about img{border-radius:24px;aspect-ratio:1;object-fit:cover;width:100%;border:1px solid var(--border)}
 .about p{color:var(--muted);margin-bottom:16px}
 .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
@@ -179,7 +195,7 @@ nav.scrolled{background:rgba(5,6,15,.82);backdrop-filter:blur(14px);-webkit-back
 /* Footer */
 footer{border-top:1px solid var(--border);padding:34px 0}
 .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.84rem;color:var(--dim)}
-.foot nav{position:static;display:flex;gap:22px;border:0}
+.foot nav{position:static;display:flex;flex-wrap:wrap;gap:12px 22px;border:0}
 .foot a:hover{color:#fff}
 
 /* Sticky mobile CTA */
@@ -187,14 +203,9 @@ footer{border-top:1px solid var(--border);padding:34px 0}
 .sticky.on{opacity:1;transform:none;pointer-events:auto}
 @media(max-width:600px){.btn.sticky{left:16px;right:16px;width:auto}}
 
-/* Legal modal */
-#legal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px}
-#legal.open{display:flex}
-.legal-box{background:#0d0f1c;border:1px solid var(--border);border-radius:20px;max-width:620px;width:100%;max-height:85vh;overflow:auto;padding:32px}
-.legal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.legal-head button{background:none;border:0;color:var(--text);font-size:1.3rem;cursor:pointer}
-.legal-box h3{font-size:1rem;margin:20px 0 6px}
-.legal-box p{color:var(--muted);font-size:.9rem}
+.foot button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0}
+.foot button:hover{color:#fff}
+a:focus-visible,button:focus-visible,summary:focus-visible,[role=button]:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 
 /* Reveal */
 .r{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -218,6 +229,7 @@ footer{border-top:1px solid var(--border);padding:34px 0}
   </div>
 </nav>
 
+<main>
 <!-- HERO -->
 <section id="hero">
   <div class="wrap hero-in">
@@ -319,7 +331,7 @@ footer{border-top:1px solid var(--border);padding:34px 0}
 <!-- À PROPOS -->
 <section id="pierre">
   <div class="wrap about">
-    <img src="pierre.jpg" alt="Pierre Debuire — créateur digital, campagnes publicitaires IA" class="r" loading="lazy" decoding="async" width="800" height="800">
+    <picture class="r"><source srcset="pierre.webp" type="image/webp"><img src="pierre.jpg" alt="Portrait de Pierre Debuire, créateur digital spécialisé en campagnes publicitaires IA" loading="lazy" decoding="async" width="800" height="800"></picture>
     <div class="r">
       <div class="label">Qui suis-je ?</div>
       <h2>Pierre Debuire,<br><span class="gt">créateur digital IA.</span></h2>
@@ -365,13 +377,17 @@ footer{border-top:1px solid var(--border);padding:34px 0}
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap foot">
     <span>© 2026 Pierre Debuire · Campagnes publicitaires IA</span>
     <nav>
       <a href="https://instagram.com/pierredbr_" target="_blank" rel="noopener">Instagram</a>
-      <a href="#" onclick="openLegal('mentions');return false">Mentions légales</a>
-      <a href="#" onclick="openLegal('privacy');return false">Confidentialité</a>
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/cgu">CGU</a>
+      <a href="/confidentialite">Confidentialité</a>
+      <button type="button" onclick="openCookieSettings()">Cookies</button>
     </nav>
   </div>
 </footer>
@@ -381,18 +397,8 @@ footer{border-top:1px solid var(--border);padding:34px 0}
   Parler de mon projet
 </a>
 
-<div id="legal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" onclick="if(event.target===this)closeLegal()">
-  <div class="legal-box">
-    <div class="legal-head"><h2 id="legalTitle" style="font-size:1.3rem;margin:0">Mentions légales</h2><button onclick="closeLegal()" aria-label="Fermer">✕</button></div>
-    <div id="legalBody"></div>
-  </div>
-</div>
-
 <script>
-function track(event, props){
-  if(typeof window.plausible==='function') window.plausible(event, props?{props}:undefined);
-  if(typeof window.gtag==='function') window.gtag('event', event, props||{});
-}
+window.track=window.track||function(){};
 
 const nav=document.getElementById('nav'), sticky=document.getElementById('sticky'), hero=document.getElementById('hero');
 function onScroll(){
@@ -408,7 +414,7 @@ function playTemo(){
   const box=document.getElementById('temoVid');
   if(box.querySelector('iframe'))return;
   const f=document.createElement('iframe');
-  f.src='https://www.youtube.com/embed/KajcdT785sY?autoplay=1&rel=0&playsinline=1';
+  f.src='https://www.youtube-nocookie.com/embed/KajcdT785sY?autoplay=1&rel=0&playsinline=1';
   f.title='Témoignage client — Pierre Debuire';
   f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
   f.allowFullscreen=true;
@@ -418,41 +424,6 @@ function playTemo(){
   track('play_temoignage');
 }
 
-const LEGAL={
-  mentions:`
-    <h3>Éditeur du site</h3>
-    <p>Pierre Debuire<br>Email : pierredebuire1@gmail.com<br>Instagram : @pierredbr_<br>Téléphone : +33 6 16 20 64 64</p>
-    <h3>Hébergement</h3>
-    <p>Vercel Inc. — 340 Pine Street, Suite 701, San Francisco, CA 94104, USA<br><a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></p>
-    <h3>Directeur de publication</h3>
-    <p>Pierre Debuire</p>
-    <h3>Propriété intellectuelle</h3>
-    <p>L'ensemble du contenu de ce site (textes, images, code) est la propriété exclusive de Pierre Debuire, sauf mention contraire. Toute reproduction est interdite sans autorisation préalable.</p>
-    <h3>Responsabilité</h3>
-    <p>Les informations présentes sur ce site sont fournies à titre indicatif. Pierre Debuire ne saurait être tenu responsable des éventuelles erreurs ou omissions.</p>`,
-  privacy:`
-    <h3>Responsable du traitement</h3>
-    <p>Pierre Debuire — pierredebuire1@gmail.com</p>
-    <h3>Données collectées</h3>
-    <p>Ce site ne comporte pas de formulaire. Les échanges se font via WhatsApp ou Instagram : les informations que tu y transmets (nom, numéro, message) sont utilisées uniquement pour répondre à ta demande.</p>
-    <h3>Durée de conservation</h3>
-    <p>Les données sont conservées pendant 3 ans à compter du dernier contact, puis supprimées.</p>
-    <h3>Tes droits</h3>
-    <p>Conformément au RGPD, tu disposes d'un droit d'accès, de rectification, d'effacement et de portabilité. Pour l'exercer : pierredebuire1@gmail.com</p>
-    <h3>Cookies</h3>
-    <p>Ce site n'utilise pas de cookies publicitaires. La vidéo YouTube n'est chargée que si tu cliques dessus.</p>`
-};
-function openLegal(type){
-  document.getElementById('legalTitle').textContent=type==='mentions'?'Mentions légales':'Politique de confidentialité';
-  document.getElementById('legalBody').innerHTML=LEGAL[type];
-  document.getElementById('legal').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeLegal(){
-  document.getElementById('legal').classList.remove('open');
-  document.body.style.overflow='';
-}
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLegal()});
 </script>
 </body>
 </html>
